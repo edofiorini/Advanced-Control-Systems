@@ -47,8 +47,6 @@ for i=1:DimValues
     DataVelocities(i, :) = dq;
     DataAccelerations(i,:) = ddq;
     
-    
-    
 end
 
 
@@ -64,3 +62,4 @@ dqd.signals.dimensions=DimValues;
 ddqd.time=T;
 ddqd.signals.values=DataAccelerations';
 ddqd.signals.dimensions=DimValues;
+

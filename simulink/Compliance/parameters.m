@@ -9,4 +9,7 @@ main
 KP = diag([ 250  350  100   50     1   1]);
 KD = diag([  35   45   15    1     0   0]);
 
-K = 3*diag([1 1 1 1 1 1]);    % stiffness
+K = 5*diag([1 1 1 1 1 1]);    % stiffness
+
+
+

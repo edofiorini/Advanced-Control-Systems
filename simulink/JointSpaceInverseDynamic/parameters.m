@@ -88,3 +88,4 @@ dqd.signals.dimensions=DimValues;
 ddqd.time=T;
 ddqd.signals.values=DataAccelerations';
 ddqd.signals.dimensions=DimValues;
+
