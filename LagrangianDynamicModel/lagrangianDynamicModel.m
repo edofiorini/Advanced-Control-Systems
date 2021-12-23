@@ -1,6 +1,8 @@
 % Compute the quation of motion -- Assignment 3
 %clear all; close all; clc;
 
+
+addpath('../.')
 dh;
 defineMechanicalParameters;
 q = [q1; q2; q3];

@@ -1,6 +1,7 @@
+% Newton Euler Dynamic Model -- Assignment 4
 clear all; close all; clc;
 
-
+addpath('../.')
 dh;
 defineMechanicalParameters;
 q = [q1; q2; q3];

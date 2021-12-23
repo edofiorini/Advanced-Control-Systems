@@ -1,7 +1,7 @@
 % Compute the Energy of 3 Dof Robot -- Assignment 2
 
 clear all; close all; clc;
-
+addpath('../.')
 
 dh;
 defineMechanicalParameters;
