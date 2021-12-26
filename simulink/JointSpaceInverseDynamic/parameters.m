@@ -39,19 +39,19 @@ KD = diag([ 24  24  24]);
 
 % Multi-points Trajecotry with continous accelerations
 
-k = [3 3 3];
+k = [4 4 4];
 
-qk_1 = [pi/4 -pi/4  0.1]';
-qk_2 = [pi/2 pi/4 -0.1]';
-qk_3 = [pi/4 -pi/6 0.2]';
-
+qk_1 = [pi/4 -pi/6  0.1]';
+qk_2 = [pi/2 pi/4 -0.3]';
+qk_3 = [pi/6 -pi/3 0.1]';
+qk_4 = [pi/4 -pi/6 0.2]';
 
 
 dqi = [0 0 0]';
 dqf = [0 0 0]';
 
-qk = [qk_1, qk_2, qk_3];
-tk = [0 1.5 4];
+qk = [qk_1, qk_2, qk_3, qk_4];
+tk = [0 1.5 3 5];
 
 q0 = qk_1;
 dotq0 = dqi;

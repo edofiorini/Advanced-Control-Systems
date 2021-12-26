@@ -7,27 +7,30 @@ addpath('../.')
 main
 
 %        [    x    y    z   phi theta psi]
-w = diag([   15   30   30    10   1     1]);
-z = diag([ 0.95 0.95 0.95  0.95   0     0]);
+KP = diag([ 650  2550  1600  100  1  4]);
+KD = diag([  49   100   160    19     0   8]);
 
-KP = w^2;
-KD = 2*z*w;
+
 
 % Multi-points Trajecotry with continous accelerations
 
-k = [3 3 3];
+k = [4 4 4];
 
-qk_1 = [pi/4 -pi/4  0.1]';
-qk_2 = [pi/2 pi/4 -0.1]';
-qk_3 = [pi/4 -pi/6 0.2]';
+qk_1 = [pi/4 -pi/6  0.1]';
+qk_2 = [pi/2 pi/4 -0.3]';
+qk_3 = [pi/6 -pi/3 0.1]';
+qk_4 = [pi/4 -pi/6 0.2]';
 
-
+% qk_1 = [pi/3 -pi/2 -0.1]';
+% qk_2 = [pi/3 -pi/2 -0.1]';
+% qk_3 = [pi/3 -pi/2 -0.1]';
+% qk_4 = [pi/3 -pi/2 -0.1]';
 
 dqi = [0 0 0]';
 dqf = [0 0 0]';
 
-qk = [qk_1, qk_2, qk_3];
-tk = [0 1.5 2];
+qk = [qk_1, qk_2, qk_3, qk_4];
+tk = [0 1.5 3 5];
 
 q0 = qk_1;
 dotq0 = dqi;

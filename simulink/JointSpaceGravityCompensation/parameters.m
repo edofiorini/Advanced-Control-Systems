@@ -6,6 +6,6 @@ addpath('../.')
 main
 
 %theta1  theta2  d3
-KP = diag([240 240 200]);
-KD = diag([ 20  10  21]);
+KP = diag([250 220 200]);
+KD = diag([ 25  10  20]);
 
