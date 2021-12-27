@@ -7,8 +7,8 @@ addpath('../.')
 main
 
 %        [    x    y    z   phi theta psi]
-KP = diag([ 650  2550  1600  100  1  4]);
-KD = diag([  49   100   160    19     0   8]);
+KP = diag([ 900  3000  1600  100  1  300]);
+KD = diag([  49   100   160    19     0   60]);
 
 
 

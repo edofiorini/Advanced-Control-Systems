@@ -7,13 +7,12 @@ addpath('../.')
 main
 
 %        [   x    y    z  phi theta psi]
-w = diag([  30  80   45    1   1     1]);
-z = diag([ 0.5  1.5  1.5    0   0     0]);
+KP = diag([  900  6400   2025    1   1     1]);
+KD = diag([ 30  240  135    0   0     0]);
 
 Md = diag([1 1 1 1 1 1]);
-KP = w^2;
-KD = 2*z*w;
-K = diag([0.5 0.5 0.5 0.1 0.1 2]); %stiffness 
+
+K = diag([2 2 2 2 2 2]); %stiffness 
 
 % Multi-points Trajecotry with continous accelerations
 

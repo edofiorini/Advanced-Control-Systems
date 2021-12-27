@@ -6,10 +6,10 @@ addpath('../.')
 main
 
 %         [   x    y    z  phi theta psi]
-KP = diag([ 250  350  100   50     1   1]);
-KD = diag([  35   45   15    1     0   0]);
+KP = diag([1700  3000  1600  100  1  4]);
+KD = diag([  150   180   160    19     0   8]);
 
-K = 5*diag([1 1 1 1 1 1]);    % stiffness
+K = 10*diag([1 1 1 1 1 1]);    % stiffness
 
 
 
