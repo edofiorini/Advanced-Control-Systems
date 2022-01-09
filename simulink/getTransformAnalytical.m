@@ -1,4 +1,4 @@
-function [TA] = getTransformAnalytical(angle)
+function [TA, Tphi] = getTransformAnalytical(angle)
 
 
     Tphi = [0 -sin(angle(1)) cos(angle(1))*sin(angle(2));

@@ -1,4 +1,4 @@
-function [J] = Jacobian(q)
+function [J] = getJacobian(q)
     
     theta1 = q(1);
     theta2 = q(2);
