@@ -1,4 +1,4 @@
-% Compute the quation of motion -- Assignment 3
+% Compute the equation of motion -- Assignment 3
 %clear all; close all; clc;
 
 
