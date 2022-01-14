@@ -6,7 +6,7 @@ addpath('../.')
 main
 
 %            [x y z]
-KP = diag([25 25 25]);
+KP = diag([30 30 30]);
 KD = diag([15 15 15]);
 
 Md = 0.75*diag([1 1 1]);
@@ -17,4 +17,4 @@ Md = 0.75*diag([1 1 1]);
 KFP = diag([0.5 0.5 0.5]);
 KFI = diag([1.5 1.5 1.5]);
 
-K = diag([15 15 15 0.1 0.1 0.1]);    % stiffness
+K = diag([8 8 8 0.1 0.1 0.1]);    % stiffness
