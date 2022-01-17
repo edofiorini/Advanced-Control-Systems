@@ -6,13 +6,20 @@ addpath('../.')
 % Intialize myRobot and initial conditions
 main
 
-%        [   x    y    z  phi theta psi]
-KP = diag([  900  6400   2025    1   1     1]);
-KD = diag([ 30  240  135    0   0     0]);
+% motion [   x    y    z   phi theta psi]
+Md = diag([2 2 2 2 2 2]);
+KP = diag([ 625 1000 2025  1   1   1]);
+KD = diag([ 25  300  135   0   0   0]);
 
-Md = diag([1 1 1 1 1 1]);
 
-K = diag([2 2 2 2 2 2]); %stiffness 
+% compliance  [x y z phi theta psi]
+Mt  = 0.75*diag([1 1 1 1 1 1]);
+KPt = 100*diag([1 1 1 1 1 1]);
+KDt = 10*diag([18 18 18 18 18 18]);
+
+
+K = diag([2 2 2 0.1 0.1 0.1]); %stiffness 
+
 
 % Multi-points Trajecotry with continous accelerations
 
@@ -61,3 +68,5 @@ dqd.signals.dimensions=DimValues;
 ddqd.time=T;
 ddqd.signals.values=DataAccelerations';
 ddqd.signals.dimensions=DimValues;
+
+
