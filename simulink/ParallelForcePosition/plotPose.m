@@ -1,6 +1,6 @@
-%% Plot the force
+%% Plot the pose
 
-figure(1);
+figure(2);
 
 subplot(3,1,1);
 plot(out.x.Time',out.x.Data(:,1)', 'LineWidth',1.8);

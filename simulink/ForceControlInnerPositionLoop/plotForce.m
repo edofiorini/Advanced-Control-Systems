@@ -1,6 +1,6 @@
 %% Plot the force
 
-figure(1);
+figure(2);
 
 subplot(3,1,1);
 plot(out.f1.Time',out.f1.Data(:,1)', 'LineWidth',1.8);

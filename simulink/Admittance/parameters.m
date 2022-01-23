@@ -8,7 +8,7 @@ main
 
 % motion [   x    y    z   phi theta psi]
 Md = diag([2 2 2 2 2 2]);
-KP = diag([ 625 1000 2025  1   1   1]);
+KP = diag([ 625 10000 2025  1   1   1]);
 KD = diag([ 25  300  135   0   0   0]);
 
 
