@@ -1,4 +1,4 @@
-function [sys,x0,str,ts] = joint_frw_dynamics_model(t,x,u,flag, myRobot)
+function [sys,x0,str,ts] = joint_frw_dynamics_model_AC(t,x,u,flag, myRobot)
 %CSFUNC An example MATLAB file S-function for defining a continuous system.  
 %   Example MATLAB file S-function implementing continuous equations: 
 %      x' = Ax + Bu
@@ -100,9 +100,10 @@ sys(1) = dq;
 % all these are just pre computed matrices
 B = 1;
 C = 1;
+F = 1;
 G = 2;
 
-sys(2) = -inv(B)* ((C*dq + G)- u);
+sys(2) = -inv(B)* ((C*dq + G + F*dq)- u);
 %, end mdlDerivatives
 %
 %=============================================================================

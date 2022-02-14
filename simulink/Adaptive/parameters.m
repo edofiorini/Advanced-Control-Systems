@@ -11,6 +11,13 @@ KD = 100;
 lambda = 80;
 K_theta = eye(3,3);
 
+I_initial = 0.5;
+I_real = 1;
+F_initial = 0.7;
+F_real = 1;
+G_initial = 1.8;
+G_real = 2;
+
 % Multi-points Trajecotry with continous accelerations
 
 k = [3];
@@ -25,7 +32,7 @@ dqi = [0]';
 dqf = [0]';
 
 qk = [qk_1, qk_2, qk_3];
-tk = [0 1.5 10];
+tk = [0 1.5 30];
 
 q0 = qk_1;
 dotq0 = dqi;
