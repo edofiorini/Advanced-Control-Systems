@@ -9,12 +9,12 @@ psiD = [];
 
 for i = 1:size(out.x.Time)
     
-    xD = [xD, out.xd.Data(1)];
-    yD = [yD, out.xd.Data(2)];
-    zD = [zD, out.xd.Data(3)];
-    phiD = [phiD, out.xd.Data(4)];
-    thetaD = [thetaD, out.xd.Data(5)];
-    psiD = [psiD, out.xd.Data(6)];
+    xD = [xD, out.xd.Data(1,:,i)];
+    yD = [yD, out.xd.Data(2,:,i)];
+    zD = [zD, out.xd.Data(3,:,i)];
+    phiD = [phiD, out.xd.Data(4,:,i)];
+    thetaD = [thetaD, out.xd.Data(5,:,i)];
+    psiD = [psiD, out.xd.Data(6,:,i)];
     
 end
 

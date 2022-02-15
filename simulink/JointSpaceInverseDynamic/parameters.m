@@ -36,6 +36,9 @@ main
 KP = diag([200 200 200]);
 KD = diag([ 24  24  24]);
 
+%     theta1  theta2  d3 for less settling time
+KP = diag([500 500 500]);
+KD = diag([ 40  40  40]);
 
 % Multi-points Trajecotry with continous accelerations
 

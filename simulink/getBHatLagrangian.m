@@ -34,9 +34,9 @@ function [B] = getBHatLagrangian(q)
     link3V = link3b * link3c * link3a; % [m^3]
     link3m = density * link3V;   % [kg]    
  
-    a1 = 0.4;
+    a1 = 0.4; %0.4 real
     a2 = 0.3;
-    l3 = 0.4;
+    l3 = 0.4; %0.4 real
   
     B = [[(7*a1^2*link1m)/12 + a1^2*link2m + a1^2*link3m + (7*a2^2*link2m)/12 + a2^2*link3m + (link1a^2*link1m)/4 + (link1b^2*link1m)/4 + (link2a^2*link2m)/4 + (link2b^2*link2m)/4 + (link3b^2*link3m)/12 + (link3c^2*link3m)/12 + a1*a2*link2m*cos(theta2) + 2*a1*a2*link3m*cos(theta2), (7*a2^2*link2m)/12 + a2^2*link3m + (link2a^2*link2m)/4 + (link2b^2*link2m)/4 + (link3b^2*link3m)/12 + (link3c^2*link3m)/12 + (a1*a2*link2m*cos(theta2))/2 + a1*a2*link3m*cos(theta2), 0];
          [                                                                                           (7*a2^2*link2m)/12 + a2^2*link3m + (link2a^2*link2m)/4 + (link2b^2*link2m)/4 + (link3b^2*link3m)/12 + (link3c^2*link3m)/12 + (a1*a2*link2m*cos(theta2))/2 + a1*a2*link3m*cos(theta2),                                                   (7*a2^2*link2m)/12 + a2^2*link3m + (link2a^2*link2m)/4 + (link2b^2*link2m)/4 + (link3b^2*link3m)/12 + (link3c^2*link3m)/12,      0];

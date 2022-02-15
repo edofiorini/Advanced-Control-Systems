@@ -1,4 +1,4 @@
-function G = getGLagrangian(q)
+function G = getGHatLagrangian(q)
 
     theta1 = q(1);
     theta2 = q(2);
