@@ -10,6 +10,9 @@ main
 KP = diag([ 900  3000  1600  100  1  300]);
 KD = diag([  49   100   160    19     0   60]);
 
+% % different integrator
+% KP = diag([ 3000  3000  3000  3000  3000  3000]);
+% KD = diag([  160   160   160    160     160   160]);
 
 
 % Multi-points Trajecotry with continous accelerations

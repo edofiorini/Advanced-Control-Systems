@@ -2,8 +2,8 @@ function [q1, q2, q3, dq1, dq2, dq3, ddq1, ddq2, ddq3, d0, a1, a2, l3, mu1, mu2,
 
     % Define robot configuration
     
-    q1 = 0;
-    q2 = 0;
+    q1 = pi/2;
+    q2 = pi/4;
     q3 = 0;
     
     dq1 = 0;

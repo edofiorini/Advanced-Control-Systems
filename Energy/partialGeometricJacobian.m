@@ -1,6 +1,6 @@
 function [partialGeoJacobian, R] = partialGeometricJacobian(dhTable,joints, link, lengthOfLink)
     
-    
+    % Compute the partial geometric jacobian
 
     [directkinematicsManualS,P, Z, R] = directKinematics(dhTable);
     [Pli] = computePCoM(R, P, link, lengthOfLink(link), joints);

@@ -6,7 +6,7 @@ subplot(3,1,1);
 plot(out.x.Time',out.x.Data(:,1)', 'LineWidth',1.8);
 hold on
 plot(out.x.Time',out.x.Data(:,2)', 'LineWidth',1.8);
-title('x1');xlabel('Time'); 
+title('x');xlabel('Time'); 
 legend('x', 'xd')
 
 subplot(3,1,2);

@@ -27,28 +27,29 @@ show(robot,config);
 
 directkinematicsTool = getTransform(robot,config,'ee', 'base_link');
 
-[directkinematicsManualS, P, Z, R, TJ01] = directKinematics(dhTable);
+% wrt frame b
+[directkinematicsManualS, P, Z, R, TJ01, RH, PH, P_b] = directKinematics(dhTable);
 directkinematicsManual = eval(directkinematicsManualS);
 
 %% Inverse Kinematics Manually
 
 % find c1 and s1
-Wx = P(1,3);
-Wz = P(3,3);
-s1 = (Wx^2+Wz^2-d0^2-a1^2)/(2*d0*a1);
-c1 = sqrt(1-s1^2);
+Wx = P_b(1,4);
+Wz = P_b(3,4);
+s1 = (Wx^2 + Wz^2 - d0^2 - a1^2)/ (2*d0*a1);
+c1 = abs(sqrt(1-s1^2));
 theta1 = atan2(s1,c1);
 theta1 = eval(theta1);
 
 % find d3
-d3 = P(2,5) + l3;
+d3 = directkinematicsManualS(2,4) + l3;
 d3 = eval(d3);
 
 % find c2 and s2
-Px = P(1,5);
-Pz = P(3,5);
-c2 = (Px^2 + (Pz - d0)^2 - a1^2 - a2^2)/ (Px^2 + (Pz - d0)^2); 
-s2 = sqrt(1-c2^2);
+Px = directkinematicsManualS(1,4);
+Pz = directkinematicsManualS(3,4);
+c2 = (Px^2 + (Pz - d0)^2 - a1^2 - a2^2)/ (2*a1*a2); 
+s2 = abs(sqrt(1-c2^2));
 theta2 = atan2(s2,c2);
 theta2 = eval(theta2);
 %% %% Inverse Kinematics
@@ -64,7 +65,10 @@ initialguess = robot.homeConfiguration;
 %% Geometric Jacobian 
 
 geoJacobianTool = geometricJacobian(robot, config, 'ee')
+
+% wrt frame 0
 [geoJacobianManualS] = geometricJacobianManual(dhTable,joints);
+% wrt frame b
 geoJacobianManualSBase = TJ01*geoJacobianManualS;
 geoJacobianManualBase = eval(geoJacobianManualSBase);
 
@@ -76,6 +80,7 @@ analyticalJacobian = eval(analyticalJacobianS);
 
 %% Matrix T that maps geometrical Jacobian into analytical jacobian
 
+% wrt frame 0
 [JaS, Ta] = analyticalJacobian(geoJacobianManualS);
 Ja = eval(JaS);
 

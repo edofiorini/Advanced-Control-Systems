@@ -1,7 +1,10 @@
-function [tau] = recursiveNewtonEuler(dq, ddq)
+function [tau] = recursiveNewtonEuler(dq, ddq, B)
     
     dh;
     defineMechanicalParameters;
+    if B == 0
+        g0 = [0;0;0];
+    end
     [directkinematicsManualS,P, Z, R, TJ01, RH, PH] = directKinematics(dhTable);
     
     z0 = [0; 0; 1];
@@ -11,6 +14,7 @@ function [tau] = recursiveNewtonEuler(dq, ddq)
     r = sym(zeros(3, dof + 1));
     r_i_CoM = sym(zeros(3, dof + 1));  
     
+    % add a zero due to matlab index
     Kr = [0, kr];
     zm = [zeros(3, 1), zm];
     dq = [0; dq];
@@ -23,14 +27,15 @@ function [tau] = recursiveNewtonEuler(dq, ddq)
     dw = sym(zeros(3, dof + 1));
     ddp = sym(zeros(3, dof + 1));
     
-    % frame 0 values 
+    % frame 0 values -- initial conditions
     w(:, 1) = initialConditionsF(:,1);
     dw(:, 1) = initialConditionsF(:,2);
     ddp(:, 1) = initialConditionsF(:,3) + g0;
 
  
-    for i= 2:dof+1  
+    for i= 2:dof+1  % Starting from 2 due to matlab indexing
         
+        % precomputations
         R_previous = RH(:,:,i-1);  % from i-1 to i
         r(:, i) = simplify(R_previous'*PH(:,:, i-1));
         r_i_CoM(:, i) = computePCoMLocal(i-1, lengthOfLink(i - 1), joints);
@@ -59,14 +64,14 @@ function [tau] = recursiveNewtonEuler(dq, ddq)
     mu(:,dof + 1) = initialConditionsB(:,2);
 
 
-    % delete first column now since it's useless and index error-proning
+    % delete first column because it is useless 
     w = w(:, 2:end);
     dw = dw(:, 2:end);
     ddpC = ddpC(:, 2:end);
     dwm = dwm(:, 2:end);
     r = r(:, 2:end);
     r_i_CoM = r_i_CoM(:, 2:end);
-    % ... and append a mock sentinel link/motor at the end
+    % append a fake value at the end for link/motor
     dq = [dq; 0];
     ddq = [ddq; 0];
     Im = [Im, 0];

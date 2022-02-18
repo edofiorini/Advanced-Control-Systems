@@ -1,4 +1,9 @@
-function [Rbe,P, Z, R, TJ01, RH, PH] = directKinematics(dh)
+function [Rbe,P, Z, R, TJ01, RH, PH, P_b] = directKinematics(dh)
+
+% This script compute the direct Kinematics of the robot starting from the
+% DH table
+
+% OUTPUT: direct kinematics and different axis
 
 syms a d alfa theta a2 d2 alfa2 theta2 a3 d3 alfa3 theta3 a4 d4 alfa4 theta4 'real'
 
@@ -75,7 +80,12 @@ if(exist('dh','var'))
     p2 = T02(1:end-1,end);
     p3 = T03(1:end-1,end);
     p4 = T04(1:end-1,end);
+    
+    % wrt frame 0
     P = [p1, p2, p3, p4];
+    
+    % wrt frame b
+    P_b = Rb0*R01;
     %Pp = [p0, p1, p2, p3, p4];
      
     r2 = T02(1:3,1:3);

@@ -1,5 +1,6 @@
 function [geoJacobian] = geometricJacobianManual(dhTable,joints)
     
+    % Compute the geometric jacobian
     
     [directkinematicsManualS,P, Z] = directKinematics(dhTable);
     

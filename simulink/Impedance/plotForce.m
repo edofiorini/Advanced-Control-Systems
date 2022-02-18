@@ -24,7 +24,7 @@ title('phi');xlabel('Time');
 
 subplot(3,2,4);
 plot(out.he.Time',out.he.Data(:,5)', 'LineWidth',1.8);
-title('theta');xlabel('Time(s)'); ylabel('q2 (rad)');
+title('theta');xlabel('Time(s)'); 
 
 
 subplot(3,2,6);

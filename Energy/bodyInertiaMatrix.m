@@ -1,5 +1,7 @@
 function [I] = bodyInertiaMatrix(Ic, joints, link, m, a, h)
         
+    % Translation respect the frame attached to the joint
+    
     if joints(link) == 'P'
         % cube
         I = Ic + m*([0 0 -a/2]*[0; 0; -a/2;]*eye(3,3) - [0; 0; -a/2;]*[0; 0; -a/2]');

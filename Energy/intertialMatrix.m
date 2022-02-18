@@ -1,5 +1,7 @@
 function [B] = intertialMatrix(nlinks, joints, parameters, dhTable, lengthOfLink)
         
+        % Compute the B matrix
+        
         B = zeros(3, 'sym');
 
         for link = 1:nlinks

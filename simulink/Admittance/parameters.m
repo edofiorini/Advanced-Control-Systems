@@ -8,10 +8,13 @@ main
 
 % motion [   x    y    z   phi theta psi]
 Md = diag([2 2 2 2 2 2]);
-KP = diag([ 2000 2500 2025  1   1   1000]);
+KP = diag([ 1500 1700 2025  1   1   100]);
 KD = diag([ 500  500  135   0   0   400]);
-% KP = diag([ 625 10000 2025  1   1   1]);
-% KD = diag([ 25  300  135   0   0   0]);
+
+% integrators
+% KP = diag([ 2000 2000 2000  1   1   100]);
+% KD = diag([ 500  500  500   0   0   400]);
+
 
 % compliance  [x y z phi theta psi]
 Mt  = 0.75*diag([1 1 1 1 1 1]);
@@ -19,7 +22,7 @@ KPt = 100*diag([1 1 1 1 1 1]);
 KDt = 10*diag([18 18 18 18 18 18]);
 
 
-K = diag([2 2 200 0.1 0.1 0.1]); %stiffness 
+K = diag([2 2 2 0.1 0.1 0.1]); %stiffness 
 
 
 % Multi-points Trajecotry with continous accelerations

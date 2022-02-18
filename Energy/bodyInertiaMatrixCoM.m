@@ -1,6 +1,7 @@
 function [Ic] = bodyInertiaMatrixCoM(joints, link, a, b, c, h, m)
 
-
+    % Inertia tensor respect CoM
+    
     if joints(link) == 'P'
         % cube
         Ic = [ 1/12*m*(b^2 + a^2)        0         0 
