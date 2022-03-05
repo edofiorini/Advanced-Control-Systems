@@ -1,4 +1,4 @@
-%% Plot the pose
+ %% Plot the pose
 
 figure(2);
 
@@ -10,7 +10,7 @@ title('x');xlabel('Time');
 legend('x', 'xd')
 
 subplot(3,1,2);
-plot(out.y.Time',zeros(1,size(out.y.Time',1)), 'LineWidth',1.8);
+plot(out.y.Time',out.y.Data(:,1)', 'LineWidth',1.8);
 hold on
 plot(out.y.Time',out.y.Data(:,2)', 'LineWidth',1.8);
 title('y');xlabel('Time'); 

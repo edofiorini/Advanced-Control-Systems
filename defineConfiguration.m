@@ -2,9 +2,9 @@ function [q1, q2, q3, dq1, dq2, dq3, ddq1, ddq2, ddq3, d0, a1, a2, l3, mu1, mu2,
 
     % Define robot configuration
     
-    q1 = pi/2;
-    q2 = pi/4;
-    q3 = 0;
+    q1 = -0.20;
+    q2 = 1.40;
+    q3 = 0.5;
     
     dq1 = 0;
     dq2 = 0;
@@ -14,8 +14,8 @@ function [q1, q2, q3, dq1, dq2, dq3, ddq1, ddq2, ddq3, d0, a1, a2, l3, mu1, mu2,
     ddq2 = 0;
     ddq3 = 0;
     
-    d0 = 0.4;
-    a1 = 0.4;
+    d0 = 0.4;%0.14; % from urdf
+    a1 = 0.4;%0.16;
     a2 = 0.3;
     l3 = 0.4;
    

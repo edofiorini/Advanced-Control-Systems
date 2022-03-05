@@ -2,7 +2,7 @@
 %clear all; close all; clc;
 
 
-addpath('../.')
+addpath('../Energy')
 dh;
 defineMechanicalParameters;
 q = [q1; q2; q3];

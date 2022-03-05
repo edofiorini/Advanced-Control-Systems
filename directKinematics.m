@@ -4,6 +4,9 @@ function [Rbe,P, Z, R, TJ01, RH, PH, P_b] = directKinematics(dh)
 % DH table
 
 % OUTPUT: direct kinematics and different axis
+%        Z : axis for the jacobian
+%        R and P : from the base
+%        RH and PH for newton euler to have all the frame
 
 syms a d alfa theta a2 d2 alfa2 theta2 a3 d3 alfa3 theta3 a4 d4 alfa4 theta4 'real'
 
@@ -97,8 +100,11 @@ if(exist('dh','var'))
     z2 = r2(:,end);
     z3 = r3(:,end);
     z4 = r4(:,end);
+    
+    % w.r.t frame 0
     Z = [z1, z2, z3, z4];
     % Zp = [[0, 0, 1], z2, z3, z4];
+    % w.r.t base 
     R = [Rb0(1:3,1:3),  r2, r3, r4];
     %Rp = [eye(3,3),  r2, r3, r4];
     
