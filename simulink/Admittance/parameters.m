@@ -22,7 +22,7 @@ KPt = 100*diag([1 1 1 1 1 1]);
 KDt = 10*diag([18 18 18 18 18 18]);
 
 
-K = diag([2 2 2 0.1 0.1 0.1]); %stiffness 
+K = diag([2 2 200 0.1 0.1 0.1]); %stiffness 
 
 
 % Multi-points Trajecotry with continous accelerations
