@@ -13,7 +13,10 @@ title('y');xlabel('Time');
 
 subplot(3,2,5);
 plot(out.he.Time',out.he.Data(:,3)', 'LineWidth',1.8);
+hold on
+plot(out.he_e.Time',out.he_e.Data(:,1)', 'LineWidth',1.8);
 title('z');xlabel('Time'); 
+legend('force', 'equilibrium force')
 
 
 subplot(3,2,2);

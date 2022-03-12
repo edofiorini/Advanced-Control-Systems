@@ -2,9 +2,9 @@ function [q1, q2, q3, dq1, dq2, dq3, ddq1, ddq2, ddq3, d0, a1, a2, l3, mu1, mu2,
 
     % Define robot configuration
     
-    q1 = -0.20;
-    q2 = 1.40;
-    q3 = 0.5;
+    q1 = 1.04;
+    q2 = -1.57;
+    q3 = -0.1;
     
     dq1 = 0;
     dq2 = 0;
