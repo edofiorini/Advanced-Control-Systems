@@ -38,7 +38,7 @@ directkinematicsManual = eval(directkinematicsManualS);
 
 %IK from base 
 %find d3
-d3 = directkinematicsManualS(2,4) + l3;
+d3 = - directkinematicsManualS(2,4) - l3;
 d3 = eval(d3);
 
 %find c2 and s2
